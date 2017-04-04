@@ -4,13 +4,12 @@
 function oneDayWeather(zip) {
 	return new Promise(function(resolve, reject){
 		$.ajax({
-			url: `KEYHERE`
+			url: ``
 		}).done(function(weatherData){
 			console.log("weatherData-->", weatherData);
 			resolve(weatherData); 
 		});
 	});
 }
-
 
 module.exports = {oneDayWeather}; 

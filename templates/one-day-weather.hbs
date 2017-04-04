@@ -1,3 +1,12 @@
-<h1>Your weather</h1>
+<h1>Current weather</h1>
 
-{{name}}
+<p>{{name}}</p>
+
+<p>Temp: {{convertTemp main.temp}}</p>
+
+<p>Description:
+{{#each weather}}
+	{{description}}
+{{/each}}
+</p>
+
