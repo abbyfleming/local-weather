@@ -1,18 +1,20 @@
 "use strict";
-let Handlebars = require('hbsfy/runtime');
 
+/* -----BROWSERIFY ------*/
+//require() returns the exports of the module name that you specify.
+var Handlebars = require('hbsfy/runtime');
+var weather = require("./weather");
+var	oneDayWeatherTemplate = require('../templates/one-day-weather.hbs');
 
-let weather = require("./weather");
-let	oneDayWeatherTemplate = require('../templates/one-day-weather.hbs');
+/*----- HANDLEBARS HELPER -----*/
+var convertTemp = require('./helpers/convertTemp'); //Require for Browserify
+Handlebars.registerHelper('convertTemp', convertTemp); //Register Helper
 
-/* REGISTER THE HELPER */
-var convertTemp = require('./helpers/convertTemp');
-Handlebars.registerHelper('convertTemp', convertTemp);
 
 
 
 function runWeather(){
-	var zipCode = document.getElementById("zipInput").value;
+	var zipCode = $("#zipInput").val();
 	var isValidZip = /(^\d{5}$)|(^\d{5}-\d{4}$)/.test(zipCode);
 
 	if (isValidZip){
@@ -23,24 +25,22 @@ function runWeather(){
 		});
 
 	} else {
-		// console.log("zip not valid"); 
-		// window.alert("Woah there, we need a valid zip code.");
-		
+		window.alert("Woah there, we need a valid zip code.");
 	}
 }
 
 function createHTML(weatherData) {
-	// Target where the results will be displayed
-	// Send the data to the Handlebars template
-	
-	let displayWeather = document.getElementById("weather-output");
-	displayWeather.innerHTML = oneDayWeatherTemplate(weatherData);
+	// Target where the results will be displayed 
+	// and send the data to the Handlebars template
+	$('#weather-output').html(oneDayWeatherTemplate(weatherData));
 }
 
 
-// EVENT LISTENERS
+/* ----- EVENT LISTENERS ----- */
 $('#submitButton').click(function() {
 	runWeather();
 }); 
+
+
 
 module.exports = {runWeather, createHTML};

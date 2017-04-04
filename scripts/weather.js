@@ -4,7 +4,7 @@
 function oneDayWeather(zip) {
 	return new Promise(function(resolve, reject){
 		$.ajax({
-			url: ``
+			url: `http://api.openweathermap.org/data/2.5/weather?zip=${zip}&APPID=APIKEYHERE`
 		}).done(function(weatherData){
 			console.log("weatherData-->", weatherData);
 			resolve(weatherData); 

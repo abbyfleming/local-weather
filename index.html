@@ -10,24 +10,17 @@
 </head>
 <body>
 	
-
 	<div id="weather-wrapper">
-	<h1>Weather</h1> 
+		<h1>Weather</h1> 
 
-<!-- 	<div id="sign-in-view">
-		<ul>
-			<li><a href="#" id="auth-btn">Sign In</a></li>
-			<li><a href="#" id="logout" class="is-hidden">Log Out</a></li>
-        </ul>
-    </div> -->
+			<div id="zipcode-view" class="hidden">
+				<input type="text" id="zipInput" class="zipInput" placeholder="Input ZIP code here">
+			<button type="submit" id="submitButton" class="submitButton">Submit</button> 
+			</div>
 
-    <div id="zipcode-view" class="hidden">
-    	<input type="text" id="zipInput" class="zipInput" placeholder="Input ZIP code here">
-		<button type="submit" id="submitButton" class="submitButton">Submit</button> 
-    </div>
+			<div id="weather-output"></div>
 
-    <div id="weather-output"></div>
-</div>
+	</div><!--end weather-wrapper-->
 
 <script type='text/javascript' src='dist/app.js'></script>
 
