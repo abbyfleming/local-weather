@@ -13,7 +13,7 @@ Users can enter a zip code and see their current weather. A handlebars helper co
 * Browse to your local server (localhost:8080)
 * Enjoy!
 
-## Technologies:
+## Technologies
 * browserify
 * handlebars
 * jquery
