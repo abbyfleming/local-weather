@@ -1,12 +1,13 @@
-<h1>Current weather</h1>
 
-<p>{{name}}</p>
+{{!-- https://openweathermap.org/current --}}
 
-<p>Temperature: {{convertTemp main.temp}} &#8457;</p>
+ <div class="card">
+	<span class='city_name'>{{name}}</span> <br> <!-- city name -->
+	{{#each weather}} {{main}} {{/each}} <br> <!-- description -->
+	<span class='temperature'>{{convertTemp main.temp}}&deg; </span><br> <!-- temp farenheit -->
 
-<p>Description:
-	{{#each weather}}
-		{{description}}
-	{{/each}}
-</p>
+	<div class='column column-one'>Column One</div>
+	<div class='column column-two'>Column Two</div>
+	<div class='column column-three'>Column Three</div>
 
+</div>
