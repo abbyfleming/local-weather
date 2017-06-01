@@ -1,13 +1,17 @@
 
 {{!-- https://openweathermap.org/current --}}
 
- <div class="card">
+<div class="card">
 	<span class='city_name'>{{name}}</span> <br> <!-- city name -->
 	{{#each weather}} {{main}} {{/each}} <br> <!-- description -->
 	<span class='temperature'>{{convertTemp main.temp}}&deg; </span><br> <!-- temp farenheit -->
-
-	<div class='column column-one'>Column One</div>
-	<div class='column column-two'>Column Two</div>
-	<div class='column column-three'>Column Three</div>
-
 </div>
+
+<div class='flex-container container-1'>
+	<div class='item'>Humidity</div>
+	<div class='item'>Wind</div>
+	<div class='item'>Lorem</div>
+</div>
+
+
+
