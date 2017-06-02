@@ -2,17 +2,16 @@
 * {
 	font-family: 'Muli', sans-serif;
 	text-transform: uppercase;
-	letter-spacing: 1px;
+	box-sizing: border-box;
 }
 
 .card {
 	background: #E6ECEB;
-	width: 400px;
-	height: 400px;
-	margin: 20px;
-	padding: 20px;
+	width: 50%;
+	height: auto;
 	text-align: center;
 	color: #999;
+	padding: 50px 0;
 }
 
 .city_name {
@@ -31,18 +30,16 @@
 
 .flex-container {
 	display: flex; /* block-level flex container */
-	flex-flow: row wrap;
+	flex-wrap: wrap;
+	flex-direction: row;
 	align-items: center;
 	justify-content: center;
+	width: 50%;
 }
 
-.container-1 {
-    flex-flow: row wrap;
-}
 
 .item {
     background-color: gray;
-    margin: 2px;
     text-align: center;
     line-height: 100px;
     font-size: 1em;
@@ -50,7 +47,10 @@
 }
 
 
-
+@media screen and (max-width:990px) {
+  .flex-container { flex-wrap: wrap;  }
+  .item { flex-basis: 100%; }
+}
 
 
 
