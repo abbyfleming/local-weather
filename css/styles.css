@@ -1,34 +1,32 @@
-
 * {
-	font-family: 'Muli', sans-serif;
-	text-transform: uppercase;
+
 	box-sizing: border-box;
 }
 
+html {
+	font-size: 1rem;
+	font-family: 'Muli', sans-serif;
+	text-transform: uppercase;
+}
+
+
+/* -- CARD INFO -- */
 .card {
 	background: #E6ECEB;
-	width: 50%;
-	max-width: 400px;
-	height: auto;
-	text-align: center;
 	color: #999;
-	padding: 50px 0;
-
+	flex: display;
 }
 
 .city_name {
-	font-size: 2em;
-	letter-spacing: 3px;
+	font-size: 2rem;
 }
 
 .temperature {
-	font-size: 10em;
+	font-size: 10rem;
 }
 
 
-/*https://tympanus.net/codrops/css_reference/flexbox/*/
-
-/*The first step to start using Flexbox is to create a flex container. Children of a flex container are called the flex items*/
+/* -- 5 DAY FORECAST -- */
 
 .flex-container {
 	display: flex; /* block-level flex container */
@@ -36,17 +34,16 @@
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
-	width: 50%;
 }
-
 
 .item {
     background-color: gray;
     text-align: center;
-    line-height: 100px;
-    font-size: 1em;
     flex: 1 1 0;
+    border: 1px solid red;
 }
+
+
 
 
 @media screen and (max-width:990px) {
