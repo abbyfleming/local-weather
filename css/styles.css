@@ -1,5 +1,4 @@
 * {
-
 	box-sizing: border-box;
 }
 
@@ -14,7 +13,8 @@ html {
 .card {
 	background: #E6ECEB;
 	color: #999;
-	flex: display;
+	text-align: center;	
+	padding: 50px 0;
 }
 
 .city_name {
@@ -30,20 +30,17 @@ html {
 
 .flex-container {
 	display: flex; /* block-level flex container */
-	flex-wrap: wrap;
-	flex-direction: row;
-	align-items: center;
-	justify-content: center;
+	flex-wrap: wrap; /* all wrapping */
+	flex-direction: row; /* horizontal */
+	align-items: center; /* items are centered in the cross-axis */
+	justify-content: center; /* items are centered along the line */
 }
 
 .item {
-    background-color: gray;
+    flex: 1 1 0; /* flex-grow | flex-shrink | flex-basis */
     text-align: center;
-    flex: 1 1 0;
-    border: 1px solid red;
+    padding: 25px 0;
 }
-
-
 
 
 @media screen and (max-width:990px) {
