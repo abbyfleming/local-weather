@@ -1,6 +1,5 @@
 .DS_Store
 node_modules
-
-values.js
+scraps
 config.js
 dist/app.js
