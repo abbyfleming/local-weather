@@ -1,12 +1,12 @@
 
 <div class="card">
-	<span class='city_name'>{{name}}</span> <br> <!-- city name -->
-	{{#each weather}} {{main}} {{/each}} <br> <!-- description -->
-	<span class='temperature'>{{convertTemp main.temp}}&deg; </span><br> <!-- temp farenheit -->
+	<span class='city_name'>{{city}}</span> <br> <!-- city name -->
+	{{description}} <br> <!-- description -->
+	<span class='temperature'>{{convertTemp temp}}&deg; </span><br> <!-- temp farenheit -->
 </div>
 
 <div class='flex-container'>
-	{{#each this}}
+	{{#each extended}}
 		<div class='item'>
 			{{this.description}} <br>
 			{{convertTemp this.day}}&deg; / {{convertTemp this.night}}&deg;
