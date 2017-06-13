@@ -24,62 +24,36 @@ function runWeather(){
 		
 		weather.oneDayWeather(zipCode)
 			.then((forecast) => {
-				console.log("forecast-->", forecast); 
-				createHTML(forecast);
-				// return weather.fiveDayWeather(zipCode);
-			});
-			// .then((forecast) => {
+
+				data.city = forecast.name;
+				data.description = forecast.weather[0].main;
+				data.temp = forecast.main.temp;
+
+				return weather.fiveDayWeather(zipCode);
+			})
+			.then((forecast) => {
 				
-			// 	// TODO 
-			// 	forecast.forEach(function(item) {
+				forecast.forEach(function(item) {
 
-			// 		let daily = {
-			// 			day: item.temp.day,
-			// 			night: item.temp.night,
-			// 			description: item.weather[0].main
-			// 		};
-					
-			// 		// weatherData.push(daily);
-			// 	});
+					let daily = {
+						day: item.temp.day,
+						night: item.temp.night,
+						description: item.weather[0].main
+					};
 
-			// 	// data.extended = weatherData;
-			// 	// console.log("data-->", data); 
-			// });
-			// // send to template
-			// console.log("data-->", data); 
-			// createHTML(data);
+					weatherData.push(daily);
+				
+				});
+
+				data.extended = weatherData;
+				createHTML(data);
+
+			});
 
 	} else {
 		window.alert("Woah there, we need a valid zip code.");
 	}
 }
-
-
-// function runFive() {
-
-// 	let weatherData = [];
-	
-// 	weather.fiveDayWeather(37091)
-// 		.then((data) => {
-
-// 			// deconstruct the data being return for easy handlings
-// 			data.forEach(function(item) {
-
-// 				let daily = {
-// 					day: item.temp.day,
-// 					night: item.temp.night,
-// 					description: item.weather[0].main
-// 				};
-				
-// 				weatherData.push(daily);
-// 			});
-		
-// 			console.log("weatherData-->", weatherData); 
-// 			// createHTML(weatherData);
-// 			return weatherData;
-
-// 		});
-// }
 
 
 
